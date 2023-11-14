@@ -53,9 +53,9 @@ jobs:
     strategy:
       fail-fast: ${{ github.event_name == 'pull_request' }}
       matrix:
-        container_flavor:
-          - master
-          - worker
+        include:
+          - container_flavor: master
+          - container_flavor: worker
 
     steps:
       - name: Checkout
